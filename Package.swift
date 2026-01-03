@@ -5,7 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "Factory",
-    version: Version(1, 0, 0),
     platforms: [
         .iOS(.v17),
         .macOS(.v10_15),
@@ -64,12 +63,3 @@ let package = Package(
         .version("6"), .v5
     ]
 )
-
-#if compiler(>=6)
-for target in package.targets where target.type != .system {
-    target.swiftSettings = target.swiftSettings ?? []
-    target.swiftSettings?.append(contentsOf: [
-        .enableExperimentalFeature("StrictConcurrency"),
-    ])
-}
-#endif
