@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Factory",
+    version: Version(1, 0, 0)
     platforms: [
         .iOS(.v17),
         .macOS(.v10_15),
